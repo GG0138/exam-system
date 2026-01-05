@@ -1,3 +1,8 @@
+try:
+    import openpyxl
+    st.success("✅ openpyxl 已正确加载！")
+except Exception as e:
+    st.error(f"❌ openpyxl 加载失败：{str(e)}")
 import sys
 print("已安装的包：", [pkg for pkg in sys.modules if 'openpy' in pkg])
 import streamlit as st
@@ -318,4 +323,5 @@ if (st.session_state.exam_started and
     if st.button("🏠 返回首页"):
         for key in list(st.session_state.keys()):
             del st.session_state[key]
+
         st.rerun()
